@@ -1,0 +1,43 @@
+{
+    "name": "timehunter/laraveljsontoclassgenerator",
+    "description": ":description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Deng",
+            "email": "ryandadeng@gmail.com",
+            "homepage": "https://github.com/RyanDaDeng"
+        }
+    ],
+    "homepage": "https://github.com/timehunter/laraveljsontoclassgenerator",
+    "keywords": ["Laravel", "LaravelJsonToClassGenerator"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TimeHunter\\LaravelJsonToClassGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TimeHunter\\LaravelJsonToClassGenerator\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TimeHunter\\LaravelJsonToClassGenerator\\LaravelJsonToClassGeneratorServiceProvider"
+            ],
+            "aliases": {
+                "LaravelJsonToClassGenerator": "TimeHunter\\LaravelJsonToClassGenerator\\Facades\\LaravelJsonToClassGenerator"
+            }
+        }
+    }
+}
