@@ -24,6 +24,93 @@ $ php artisan make:jsontoclass
 ```` 
 4. Check your files under your specified file location 
 
+
+## Example
+
+Input - PHP Array:
+
+````php
+     'message' => [
+            'author' => [
+                'first_name' => '',
+                'last_name'  => '',
+            ],
+            'text'   => '',
+            'date'   => '2019-01-01'
+        ]
+````
+
+or JSON
+
+````json
+{
+  "message":{
+      "author": {
+          "first_name": "",
+          "last_name": ""
+      },
+      "text": "",
+      "date": "2019-01-01",
+  }
+}
+````
+
+Output - Classes:
+
+#### Message Class
+````php
+<?php
+
+namespace App\Test;
+
+class Message
+{
+	public $author;
+
+	public $text;
+
+	public $date;
+
+
+	public function toArray(): array
+	{
+		return [
+		   'author' => collect($this->author)->map(function (Author $data){
+		        return $data->toArray();
+		    })->toArray(),
+		   'text' => $this->text,
+		   'date' => $this->date,
+		];
+	}
+}
+
+````
+
+#### Author Class
+````php
+<?php
+
+namespace App\Test;
+
+class Author
+{
+	public $firstName;
+
+	public $lastName;
+
+
+	public function toArray(): array
+	{
+		return [
+		   'first_name' => $this->firstName,
+		   'last_name' => $this->lastName,
+		];
+	}
+}
+
+````
+
+
 ## License
 
 MIT. Please see the [license file](license.md) for more information.
