@@ -8,7 +8,6 @@
 [ico-version]: https://img.shields.io/packagist/v/timehunter/laravel-json-to-class-generator.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laravel-json-to-class-generator.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
-## Installation
 
 Star me if you like it. ^.^ You can use this tool with 3rd party IDE to create nice classes.
 
@@ -20,7 +19,7 @@ Via Composer
 composer require --dev timehunter/laravel-json-to-class-generator "~1.0"
 ```
 
-## Usage
+## Installation
 
 1. Create your local config file
 ````bash
