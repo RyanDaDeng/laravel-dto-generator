@@ -3,14 +3,11 @@
 namespace TimeHunter\LaravelJsonToClassGenerator\Services;
 
 
-use Illuminate\Support\Facades\File;
-use Nette\PhpGenerator\PhpFile;
-
 /**
  * Class JsonToClassGenerator
  * @package TimeHunter\LaravelJsonToClassGenerator\Services
  */
-class JsonToClassGenerator extends AbstractClassGenerator
+class ArrayToClassGenerator extends AbstractClassGenerator
 {
 
     /**
@@ -18,7 +15,6 @@ class JsonToClassGenerator extends AbstractClassGenerator
      */
     public function getData(): array
     {
-        return json_decode(config('jsontoclassgenerator.json'),1);
+        return config('jsontoclassgenerator.array');
     }
-
 }

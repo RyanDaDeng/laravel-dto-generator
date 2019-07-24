@@ -4,6 +4,7 @@ namespace TimeHunter\LaravelJsonToClassGenerator\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use TimeHunter\LaravelJsonToClassGenerator\JsonGeneratorFactory;
 use TimeHunter\LaravelJsonToClassGenerator\Services\JsonToClassGenerator;
 
 class JsonToClassGeneratorCommand extends Command
@@ -39,10 +40,10 @@ class JsonToClassGeneratorCommand extends Command
      */
     public function handle()
     {
-        try{
-            JsonToClassGenerator::generate(config('jsontoclassgenerator.data'));
+        try {
+            JsonGeneratorFactory::generate(config('jsontoclassgenerator.driver'));
             $this->info('Classes generated. Please check them.');
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             Log::error($e);
             $this->warn('Error happens, please check log file.');
         }
