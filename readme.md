@@ -4,10 +4,10 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-[link-packagist]: https://packagist.org/packages/timehunter/laraveljsontoclassgenerator
-[ico-version]: https://img.shields.io/packagist/v/timehunter/laraveljsontoclassgenerator.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laraveljsontoclassgenerator.svg?style=flat-square
-[link-downloads]: https://packagist.org/packages/timehunter/laraveljsontoclassgenerator
+[link-packagist]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
+[ico-version]: https://img.shields.io/packagist/v/timehunter/laravel-json-to-class-generator.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laravel-json-to-class-generator.svg?style=flat-square
+[link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
 ## Installation
 
 Install the package in development dependencies:
@@ -15,7 +15,7 @@ Install the package in development dependencies:
 Via Composer
 
 ``` bash
-$ composer require-dev timehunter/laraveljsontoclassgenerator
+$ composer require-dev timehunter/laraveljsontoclassgenerator "~1.0"
 ```
 
 ## Usage
