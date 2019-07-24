@@ -15,7 +15,7 @@ Install the package in development dependencies:
 Via Composer
 
 ``` bash
-composer require-dev timehunter/laravel-json-to-class-generator "~1.0"
+composer require --dev timehunter/laravel-json-to-class-generator "~1.0"
 ```
 
 ## Usage
