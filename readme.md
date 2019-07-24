@@ -10,6 +10,8 @@
 [link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
 ## Installation
 
+Star me if you like it. ^.^
+
 Install the package in development dependencies:
 
 Via Composer
