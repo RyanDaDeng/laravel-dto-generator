@@ -1,6 +1,13 @@
 # Laravel JSON to Class Generator
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
 
+
+[link-packagist]: https://packagist.org/packages/timehunter/laraveljsontoclassgenerator
+[ico-version]: https://img.shields.io/packagist/v/timehunter/laraveljsontoclassgenerator.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laraveljsontoclassgenerator.svg?style=flat-square
+[link-downloads]: https://packagist.org/packages/timehunter/laraveljsontoclassgenerator
 ## Installation
 
 Install the package in development dependencies:

@@ -1,5 +1,5 @@
 {
-  "name": "timehunter/laraveljsontoclassgenerator",
+  "name": "timehunter/laravel-json-to-class-generator",
   "description": "A generator that translates JSON or Array to be classes.",
   "license": "MIT",
   "authors": [
@@ -12,7 +12,14 @@
   "homepage": "https://github.com/timehunter/laraveljsontoclassgenerator",
   "keywords": [
     "Laravel",
-    "LaravelJsonToClassGenerator"
+    "LaravelJsonToClassGenerator",
+    "class generator",
+    "model generator",
+    "json generator",
+    "json to model",
+    "array to json",
+    "array to model",
+    "json to class"
   ],
   "require": {
     "illuminate/support": "~5"
