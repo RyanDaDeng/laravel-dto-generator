@@ -24,7 +24,7 @@ composer require-dev timehunter/laravel-json-to-class-generator "~1.0"
 ````bash
 php artisan vendor:publish --provider="TimeHunter\LaravelJsonToClassGenerator\LaravelJsonToClassGeneratorServiceProvider"
 ````
-2. Add your JSON array in config
+2. Add your JSON or array object in config
 3. Run artisan command:
 ````bash
 php artisan make:jsontoclass
