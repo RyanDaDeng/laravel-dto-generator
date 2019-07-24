@@ -10,7 +10,7 @@
 [link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
 ## Installation
 
-Star me if you like it. ^.^
+Star me if you like it. ^.^ You can use this tool with PHPStorm to create nice classes.
 
 Install the package in development dependencies:
 
@@ -123,6 +123,27 @@ class Author
 
 ````
 
+## PHPStorm
+
+If you are using PHPStorm and you want to put `return $this` in each set function.
+
+Open PhpStorm's Preferences and "File and Code Templates" menu, under the "Code" tab there's an option called "PHP Setter Method". Modify it to look like this:
+
+````php
+/**
+ * @param ${TYPE_HINT} $${PARAM_NAME}
+ * @return ${CLASS_NAME}
+ */
+public ${STATIC} function set${NAME}($${PARAM_NAME})
+{
+#if (${STATIC} == "static")
+    self::$${FIELD_NAME} = $${PARAM_NAME};
+#else
+    $this->${FIELD_NAME} = $${PARAM_NAME};
+#end
+    return $this;
+}
+````
 
 ## License
 
