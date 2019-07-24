@@ -22,10 +22,10 @@
     "json to class"
   ],
   "require": {
-    "illuminate/support": "~5"
+    "illuminate/support": "~5",
+    "nette/php-generator": "^3.2"
   },
   "require-dev": {
-    "nette/php-generator": "^3.2"
   },
   "autoload": {
     "psr-4": {
