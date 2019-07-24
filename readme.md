@@ -34,7 +34,10 @@ php artisan make:jsontoclass
 
 ## Example
 
-Input - PHP Array:
+
+### Input
+
+#### PHP Array
 
 ````php
      'message' => [
@@ -47,7 +50,7 @@ Input - PHP Array:
         ]
 ````
 
-or JSON
+#### or JSON
 
 ````json
 {
@@ -62,7 +65,8 @@ or JSON
 }
 ````
 
-Output - Classes:
+
+### Output - Classes:
 
 #### Message Class
 ````php
