@@ -10,7 +10,7 @@
 [link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
 ## Installation
 
-Star me if you like it. ^.^ You can use this tool with PHPStorm to create nice classes.
+Star me if you like it. ^.^ You can use this tool with 3rd party IDE to create nice classes.
 
 Install the package in development dependencies:
 
