@@ -24,7 +24,7 @@ return [
             ],
             'followers' => (array)[
                 'id'            => '',
-                'follower_user' => [
+                'follower_user' => (object)[
                     'first_name' => '',
                     'last_name'  => ''
                 ]
