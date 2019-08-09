@@ -80,6 +80,87 @@ Note: each object should have key name defined.
 
 ### Output - Classes:
 
+
+#### User Class
+````php
+
+class User
+{
+	/** @var $firstName */
+	public $firstName;
+
+	/** @var $lastName */
+	public $lastName;
+
+
+	/**
+	 * @return User
+	 */
+	public static function create()
+	{
+		return new self;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public function toArray(): array
+	{
+		return [
+		   'first_name' => $this->firstName,
+		   'last_name' => $this->lastName,
+		];
+	}
+}
+
+````
+
+#### Comment Class
+````php
+
+class Comment
+{
+	/** @var User $user */
+	public $user;
+
+	/** @var $content */
+	public $content;
+
+
+	/**
+	 * @return Comment
+	 */
+	public static function create()
+	{
+		return new self;
+	}
+
+
+	/**
+	 * @param User $user
+	 * @return $this
+	 */
+	public function addUser($user)
+	{
+		$this->user = $user;
+		return $this;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public function toArray(): array
+	{
+		return [
+		   'user' => $this->user->toArray(),
+		   'content' => $this->content,
+		];
+	}
+}
+
+````
 #### Author Class
 ````php
 <?php
