@@ -41,76 +41,154 @@ php artisan make:jsontoclass
 #### PHP Array
 
 ````php
-     'message' => [
-            'author' => [
+     'post' => [
+            'author'    => (object)[
                 'first_name' => '',
                 'last_name'  => '',
             ],
-            'text'   => '',
-            'date'   => '2019-01-01'
+            'comment'   => (object)[
+                'user'    => (object)[
+                    'first_name' => '',
+                    'last_name'  => ''
+                ],
+                'content' => ''
+            ],
+            'followers' => (array)[
+                'id'            => '',
+                'follower_user' => [
+                    'first_name' => '',
+                    'last_name'  => ''
+                ]
+            ],
+            'text'      => '',
+            'date'      => '2019-01-01'
         ]
 ````
 
+Note: each object should have key name defined. 
+
+- If it is object please put `object`. 
+- If your components are array of object, please define it as a pure array.
+
 #### or JSON
 
-````json
-{
-  "message":{
-      "author": {
-          "first_name": "",
-          "last_name": ""
-      },
-      "text": "",
-      "date": "2019-01-01",
-  }
-}
-````
+Note: I have disabled JSON method, you need to convert JSON to PHP array yourself. (You can use online convert tool if necessary)
+
 
 
 ### Output - Classes:
-
-#### Message Class
-````php
-<?php
-
-namespace App\Test;
-
-class Message
-{
-	public $author;
-
-	public $text;
-
-	public $date;
-
-
-	public function toArray(): array
-	{
-		return [
-		   'author' => collect($this->author)->map(function (Author $data){
-		        return $data->toArray();
-		    })->toArray(),
-		   'text' => $this->text,
-		   'date' => $this->date,
-		];
-	}
-}
-
-````
 
 #### Author Class
 ````php
 <?php
 
-namespace App\Test;
 
 class Author
 {
+	/** @var $firstName */
 	public $firstName;
 
+	/** @var $lastName */
 	public $lastName;
 
 
+	/**
+	 * @return Author
+	 */
+	public static function create()
+	{
+		return new self;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public function toArray(): array
+	{
+		return [
+		   'first_name' => $this->firstName,
+		   'last_name' => $this->lastName,
+		];
+	}
+}
+
+
+````
+
+#### Followers Class
+````php
+<?php
+class Followers
+{
+	/** @var $id */
+	public $id;
+
+	/** @var FollowerUser $followerUser */
+	public $followerUser;
+
+
+	/**
+	 * @return Followers
+	 */
+	public static function create()
+	{
+		return new self;
+	}
+
+
+	/**
+	 * @param FollowerUser $followerUser
+	 * @return $this
+	 */
+	public function addFollowerUser($followerUser)
+	{
+		$this->followerUser[] = $followerUser;
+		return $this;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public function toArray(): array
+	{
+		return [
+		   'id' => $this->id,
+		   'follower_user' => collect($this->followerUser)->map(function (FollowerUser $data){
+		        return $data->toArray();
+		    })->toArray(),
+		];
+	}
+}
+
+
+````
+
+
+#### FollowerUser Class
+````php
+class FollowerUser
+{
+	/** @var $firstName */
+	public $firstName;
+
+	/** @var $lastName */
+	public $lastName;
+
+
+	/**
+	 * @return FollowerUser
+	 */
+	public static function create()
+	{
+		return new self;
+	}
+
+
+	/**
+	 * @return array
+	 */
 	public function toArray(): array
 	{
 		return [
@@ -121,7 +199,6 @@ class Author
 }
 
 ````
-
 ## PHPStorm
 
 If you are using PHPStorm and you want to put `return $this` in each set function.
