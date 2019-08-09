@@ -10,15 +10,27 @@ return [
     'array'         => [
         # Please define an object instead of item
         # so each array needs to be defined with a key name, for example, 'message' is a key name
-        'message' => [
-            'author' => [
+        'post' => [
+            'author'    => (object)[
                 'first_name' => '',
                 'last_name'  => '',
             ],
-            'text'   => '',
-            'date'   => '2019-01-01'
+            'comment'   => (object)[
+                'user'    => (object)[
+                    'first_name' => '',
+                    'last_name'  => ''
+                ],
+                'content' => ''
+            ],
+            'followers' => (array)[
+                'id'            => '',
+                'follower_user' => [
+                    'first_name' => '',
+                    'last_name'  => ''
+                ]
+            ],
+            'text'      => '',
+            'date'      => '2019-01-01'
         ]
     ],
-    # Remember to define an object with a key name
-    'json'          => "{}"
 ];
