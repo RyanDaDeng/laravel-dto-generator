@@ -67,13 +67,13 @@ php artisan make:jsontoclass
 
 Note: each object should have key name defined. 
 
-- If it is object please define it as a `object`, see above.
-- If your components are array of object, please define it as a pure array.
+- If it is an object please define it as a `object`, see the above.
+- If your components are array of objects, please define it as a pure array.
 - You have to assign a value for each property, for example, an empty string `''` for `first_name`.
 
 #### or JSON
 
-- I have disabled JSON method, you need to convert JSON to PHP array yourself. (You can use online convert tool if necessary)
+- I have disabled JSON method, you need to convert JSON to PHP array by yourself. (You can use online convert tool if necessary)
 - Then please follow Array Input instruction.
 
 
