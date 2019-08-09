@@ -37,24 +37,38 @@ abstract class AbstractClassGenerator
             $namespace = $phpFile->addNamespace($namespaceString);
             $class     = $namespace->addClass($className);
 
+            $class->addMethod('create')->setStatic(true)->setBody('return new self;')->addComment('@return ' . $className);
             $toArray = "return [\n";
             foreach ($data as $itemKey => $item) {
                 $camelCase = $this->convert($itemKey);
-                $class->addProperty($camelCase);
-                if (is_array($item)) {
 
+                if (is_object($item)) {
                     $subClassName = $this->convertClassName($itemKey);
 
-                    $toArray .= "   '$itemKey' => " . 'collect($this->' . $camelCase . ')->map(function (' . "$subClassName" . ' $data){
-        return $data->toArray();
-    })->toArray()' . ',' . "\n";
+                    $class->addProperty($camelCase)->addComment('@var ' . ucfirst($camelCase) . ' $' . $camelCase);
+                    $class->addMethod('add' . ucfirst($camelCase))->addComment('@param ' . ucfirst($camelCase) . ' $' . $camelCase . "\n" . '@return $this')->setBody('$this->' . $camelCase . ' = ' . '$' . $camelCase . ';' . "\n" . 'return $this;')->addParameter($camelCase);
+
+                    $toArray .= "   '$itemKey' => " . '$this->' . $camelCase . '->toArray()' . ',' . "\n";
                     $this->recursiveCreateFile([$itemKey => $item], $namespaceString);
                 } else {
-                    $toArray .= "   '$itemKey' => " . '$this->' . $camelCase . ',' . "\n";
+                    if (is_array($item)) {
+                        $subClassName = $this->convertClassName($itemKey);
+
+                        $class->addProperty($camelCase)->addComment('@var ' . ucfirst($camelCase) . ' $' . $camelCase);
+                        $class->addMethod('add' . ucfirst($camelCase))->addComment('@param ' . ucfirst($camelCase) . ' $' . $camelCase . "\n" . '@return $this')->setBody('$this->' . $camelCase . '[] = ' . '$' . $camelCase . ';' . "\n" . 'return $this;')->addParameter($camelCase);
+
+                        $toArray .= "   '$itemKey' => " . 'collect($this->' . $camelCase . ')->map(function (' . "$subClassName" . ' $data){
+        return $data->toArray();
+    })->toArray()' . ',' . "\n";
+                        $this->recursiveCreateFile([$itemKey => $item], $namespaceString);
+                    } else {
+                        $class->addProperty($camelCase)->addComment('@var $' . $camelCase);
+                        $toArray .= "   '$itemKey' => " . '$this->' . $camelCase . ',' . "\n";
+                    }
                 }
             }
             $toArray .= "];";
-            $class->addMethod('toArray')->setReturnType('array')->setBody($toArray); // method return type;
+            $class->addMethod('toArray')->addComment('@return array')->setReturnType('array')->setBody($toArray); // method return type;
 
             $file = $className . '.php';
 
