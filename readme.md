@@ -75,15 +75,6 @@ Note: each object should have key name defined.
 - If your components are array of objects, please define it as a pure array.
 - You have to assign a value for each property, for example, an empty string `''` for `first_name`.
 
-#### or JSON
-
-- I have disabled JSON method, you need to convert JSON to PHP array by yourself. (You can use online convert tool if necessary)
-- Then please follow Array Schema instruction.
-
-
-
-### Output - Classes:
-
 #### Example Output Usage
 
 ````php
@@ -100,6 +91,10 @@ Note: each object should have key name defined.
             );
         var_dump($result->toArray());
 ````
+
+
+### Output - DTOs:
+
 
 #### User Class
 ````php
