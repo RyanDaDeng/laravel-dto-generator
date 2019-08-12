@@ -10,32 +10,35 @@ return [
     'array'         => [
         # Please define an object instead of item
         # so each array needs to be defined with a key name, for example, 'post' is a key name
-        'post' => [
-            'author'   => (object)[
+        'post'     => (object)[
+            'author'    => (object)[
                 'id'         => 1,
                 'note'       => null,
                 'rating'     => 4.6,
                 'first_name' => '',
                 'last_name'  => '',
             ],
-            'comment'  => (object)[
-                'comment_by'    => (object)[
+            'comment'   => (object)[
+                'comment_by' => (object)[
                     'is_active'  => false,
                     'first_name' => '',
                     'last_name'  => ''
                 ],
-                'content' => ''
+                'content'    => ''
             ],
-            'followers' => (array)[
+            'followers' => (object)[
                 'id'             => 1,
-                'follower_users' => [
+                'follower_users' => (array)[
                     'first_name' => '',
                     'last_name'  => ''
                 ]
             ],
-            'views'    => 123,
-            'text'     => '',
-            'date'     => '2019-01-01'
+            'views'     => 123,
+            'text'      => '',
+            'date'      => '2019-01-01'
+        ],
+        'feedback' => (object)[
+            'comment' => ''
         ]
     ],
 ];
