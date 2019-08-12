@@ -19,7 +19,7 @@ return [
                 'last_name'  => '',
             ],
             'comment'  => (object)[
-                'user'    => (object)[
+                'comment_by'    => (object)[
                     'is_active'  => false,
                     'first_name' => '',
                     'last_name'  => ''
