@@ -11,6 +11,8 @@
 
 ## A DTO generator that helps you create a bunch of models instead of repeating copy/paste.
 
+### Star me if you find its useful. ^.^
+
 *Please update your version to be "~v2.0" and re-publish your config file*
 
 Install the package in development dependencies:
