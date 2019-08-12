@@ -18,14 +18,14 @@ Install the package in development dependencies:
 Via Composer
 
 ``` bash
-composer require --dev timehunter/laravel-json-to-class-generator "~2.0"
+composer require --dev timehunter/laravel-dto-generator "~2.1"
 ```
 
 ## Installation
 
 1. Create your local config file
 ````bash
-php artisan vendor:publish --provider="TimeHunter\LaravelJsonToClassGenerator\LaravelJsonToClassGeneratorServiceProvider"
+php artisan vendor:publish --provider="TimeHunter\LaravelDTOGenerator\LaravelDTOGeneratorServiceProvider"
 ````
 2. Add your array schema in config
 3. Run artisan command:
