@@ -40,7 +40,7 @@ php artisan make:dto
 
 ### Input
 
-#### PHP Array
+#### PHP Array Schema
 
 ````php
      'post' => [
@@ -76,7 +76,7 @@ Note: each object should have key name defined.
 #### or JSON
 
 - I have disabled JSON method, you need to convert JSON to PHP array by yourself. (You can use online convert tool if necessary)
-- Then please follow Array Input instruction.
+- Then please follow Array Schema instruction.
 
 
 
