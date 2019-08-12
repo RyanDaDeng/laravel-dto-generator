@@ -2,10 +2,10 @@
 
 namespace TimeHunter\LaravelDTOGenerator;
 
-use TimeHunter\LaravelJsonToClassGenerator\Services\ArrayToClassGenerator;
+use TimeHunter\LaravelDTOGenerator\Services\ArrayToClassGenerator;
 
 use Exception;
-use TimeHunter\LaravelJsonToClassGenerator\Services\JsonToClassGenerator;
+use TimeHunter\LaravelDTOGenerator\Services\JsonToClassGenerator;
 
 class DTOGeneratorFactory
 {
