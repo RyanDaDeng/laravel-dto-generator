@@ -80,17 +80,39 @@ Note: each object should have key name defined.
 
 ### Output - Classes:
 
+#### Example Output Usage
+
+````php
+    $result = Followers::create()->setId(1)
+            ->addFollowerUsers(
+                FollowerUsers::create()
+                    ->setFirstName('ss')
+                    ->setLastName('dd')
+            )
+            ->addFollowerUsers(
+                FollowerUsers::create()
+                    ->setFirstName('ss')
+                    ->setLastName('dd')
+            );
+        var_dump($result->toArray());
+````
 
 #### User Class
 ````php
+<?php
+
+namespace App;
 
 class User
 {
-	/** @var $firstName */
-	public $firstName;
+	/** @var bool $isActive */
+	private $isActive;
 
-	/** @var $lastName */
-	public $lastName;
+	/** @var string $firstName */
+	private $firstName;
+
+	/** @var string $lastName */
+	private $lastName;
 
 
 	/**
@@ -103,29 +125,92 @@ class User
 
 
 	/**
+	 * @return bool
+	 */
+	public function getIsActive(): bool
+	{
+		return $this->isActive;
+	}
+
+
+	/**
+	 * @param bool $isActive
+	 * @return $this
+	 */
+	public function setIsActive(bool $isActive): self
+	{
+		$this->isActive = $isActive;
+		return $this;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getFirstName(): string
+	{
+		return $this->firstName;
+	}
+
+
+	/**
+	 * @param string $firstName
+	 * @return $this
+	 */
+	public function setFirstName(string $firstName): self
+	{
+		$this->firstName = $firstName;
+		return $this;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getLastName(): string
+	{
+		return $this->lastName;
+	}
+
+
+	/**
+	 * @param string $lastName
+	 * @return $this
+	 */
+	public function setLastName(string $lastName): self
+	{
+		$this->lastName = $lastName;
+		return $this;
+	}
+
+
+	/**
 	 * @return array
 	 */
 	public function toArray(): array
 	{
 		return [
+		   'is_active' => $this->isActive,
 		   'first_name' => $this->firstName,
 		   'last_name' => $this->lastName,
 		];
 	}
 }
 
+
 ````
 
 #### Comment Class
 ````php
+namespace App;
 
 class Comment
 {
 	/** @var User $user */
-	public $user;
+	private $user;
 
-	/** @var $content */
-	public $content;
+	/** @var string $content */
+	private $content;
 
 
 	/**
@@ -138,12 +223,52 @@ class Comment
 
 
 	/**
+	 * @param user $user
+	 * @return $this
+	 */
+	public function addUser(User $user): self
+	{
+		$this->user = $user;
+		return $this;
+	}
+
+
+	/**
+	 * @return User
+	 */
+	public function getUser(): User
+	{
+		return $this->user;
+	}
+
+
+	/**
 	 * @param User $user
 	 * @return $this
 	 */
-	public function addUser($user)
+	public function setUser(User $user): self
 	{
 		$this->user = $user;
+		return $this;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getContent(): string
+	{
+		return $this->content;
+	}
+
+
+	/**
+	 * @param string $content
+	 * @return $this
+	 */
+	public function setContent(string $content): self
+	{
+		$this->content = $content;
 		return $this;
 	}
 
@@ -160,19 +285,28 @@ class Comment
 	}
 }
 
+
 ````
 #### Author Class
 ````php
-<?php
-
+namespace App;
 
 class Author
 {
-	/** @var $firstName */
-	public $firstName;
+	/** @var int $id */
+	private $id;
 
-	/** @var $lastName */
-	public $lastName;
+	/** @var  $note */
+	private $note;
+
+	/** @var float $rating */
+	private $rating;
+
+	/** @var string $firstName */
+	private $firstName;
+
+	/** @var string $lastName */
+	private $lastName;
 
 
 	/**
@@ -185,30 +319,133 @@ class Author
 
 
 	/**
+	 * @return int
+	 */
+	public function getId(): int
+	{
+		return $this->id;
+	}
+
+
+	/**
+	 * @param int $id
+	 * @return $this
+	 */
+	public function setId(int $id): self
+	{
+		$this->id = $id;
+		return $this;
+	}
+
+
+	/**
+	 * @return mixed
+	 */
+	public function getNote()
+	{
+		return $this->note;
+	}
+
+
+	/**
+	 * @param  $note
+	 * @return $this
+	 */
+	public function setNote($note): self
+	{
+		$this->note = $note;
+		return $this;
+	}
+
+
+	/**
+	 * @return float
+	 */
+	public function getRating(): float
+	{
+		return $this->rating;
+	}
+
+
+	/**
+	 * @param float $rating
+	 * @return $this
+	 */
+	public function setRating(float $rating): self
+	{
+		$this->rating = $rating;
+		return $this;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getFirstName(): string
+	{
+		return $this->firstName;
+	}
+
+
+	/**
+	 * @param string $firstName
+	 * @return $this
+	 */
+	public function setFirstName(string $firstName): self
+	{
+		$this->firstName = $firstName;
+		return $this;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getLastName(): string
+	{
+		return $this->lastName;
+	}
+
+
+	/**
+	 * @param string $lastName
+	 * @return $this
+	 */
+	public function setLastName(string $lastName): self
+	{
+		$this->lastName = $lastName;
+		return $this;
+	}
+
+
+	/**
 	 * @return array
 	 */
 	public function toArray(): array
 	{
 		return [
+		   'id' => $this->id,
+		   'note' => $this->note,
+		   'rating' => $this->rating,
 		   'first_name' => $this->firstName,
 		   'last_name' => $this->lastName,
 		];
 	}
 }
 
-
 ````
 
 #### Followers Class
 ````php
-<?php
+namespace App;
+
 class Followers
 {
-	/** @var $id */
-	public $id;
+	/** @var int $id */
+	private $id;
 
-	/** @var FollowerUser $followerUser */
-	public $followerUser;
+	/** @var FollowerUsers[] $followerUsers */
+	private $followerUsers = [];
 
 
 	/**
@@ -221,12 +458,52 @@ class Followers
 
 
 	/**
-	 * @param FollowerUser $followerUser
+	 * @return int
+	 */
+	public function getId(): int
+	{
+		return $this->id;
+	}
+
+
+	/**
+	 * @param int $id
 	 * @return $this
 	 */
-	public function addFollowerUser($followerUser)
+	public function setId(int $id): self
 	{
-		$this->followerUser[] = $followerUser;
+		$this->id = $id;
+		return $this;
+	}
+
+
+	/**
+	 * @param followerUsers $followerUsers
+	 * @return $this
+	 */
+	public function addFollowerUsers(FollowerUsers $followerUsers): self
+	{
+		$this->followerUsers[] = $followerUsers;
+		return $this;
+	}
+
+
+	/**
+	 * @return FollowerUsers[]
+	 */
+	public function getFollowerUsers()
+	{
+		return $this->followerUsers;
+	}
+
+
+	/**
+	 * @param FollowerUsers[] $followerUsers
+	 * @return $this
+	 */
+	public function setFollowerUsers($followerUsers): self
+	{
+		$this->followerUsers = $followerUsers;
 		return $this;
 	}
 
@@ -238,34 +515,75 @@ class Followers
 	{
 		return [
 		   'id' => $this->id,
-		   'follower_user' => collect($this->followerUser)->map(function (FollowerUser $data){
-		        return $data->toArray();
-		    })->toArray(),
+		   'follower_users' => array_map(function (FollowerUsers $data){
+		          return $data->toArray();
+		      }, $this->followerUsers),
 		];
 	}
 }
-
 
 ````
 
 
 #### FollowerUser Class
 ````php
-class FollowerUser
-{
-	/** @var $firstName */
-	public $firstName;
+namespace App;
 
-	/** @var $lastName */
-	public $lastName;
+class FollowerUsers
+{
+	/** @var string $firstName */
+	private $firstName;
+
+	/** @var string $lastName */
+	private $lastName;
 
 
 	/**
-	 * @return FollowerUser
+	 * @return FollowerUsers
 	 */
 	public static function create()
 	{
 		return new self;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getFirstName(): string
+	{
+		return $this->firstName;
+	}
+
+
+	/**
+	 * @param string $firstName
+	 * @return $this
+	 */
+	public function setFirstName(string $firstName): self
+	{
+		$this->firstName = $firstName;
+		return $this;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getLastName(): string
+	{
+		return $this->lastName;
+	}
+
+
+	/**
+	 * @param string $lastName
+	 * @return $this
+	 */
+	public function setLastName(string $lastName): self
+	{
+		$this->lastName = $lastName;
+		return $this;
 	}
 
 
@@ -282,27 +600,7 @@ class FollowerUser
 }
 
 ````
-## PHPStorm
 
-If you are using PHPStorm and you want to put `return $this` in each set function.
-
-Open PhpStorm's Preferences and "File and Code Templates" menu, under the "Code" tab there's an option called "PHP Setter Method". Modify it to look like this:
-
-````php
-/**
- * @param ${TYPE_HINT} $${PARAM_NAME}
- * @return ${CLASS_NAME}
- */
-public ${STATIC} function set${NAME}($${PARAM_NAME})
-{
-#if (${STATIC} == "static")
-    self::$${FIELD_NAME} = $${PARAM_NAME};
-#else
-    $this->${FIELD_NAME} = $${PARAM_NAME};
-#end
-    return $this;
-}
-````
 
 ## License
 
