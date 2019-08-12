@@ -4,10 +4,10 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-[link-packagist]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
-[ico-version]: https://img.shields.io/packagist/v/timehunter/laravel-json-to-class-generator.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laravel-json-to-class-generator.svg?style=flat-square
-[link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
+[link-packagist]: https://packagist.org/packages/timehunter/laravel-dto-generator
+[ico-version]: https://img.shields.io/packagist/v/timehunter/laravel-dto-generator.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laravel-dto-generator.svg?style=flat-square
+[link-downloads]: https://packagist.org/packages/timehunter/laravel-dto-generator
 
 *Please update your version to be "~v2.0" and re-publish your config file*
 
