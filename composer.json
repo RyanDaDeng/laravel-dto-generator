@@ -1,6 +1,6 @@
 {
-  "name": "timehunter/laravel-json-to-class-generator",
-  "description": "A generator that translates JSON or Array to be classes.",
+  "name": "timehunter/laravel-dto-generator",
+  "description": "A generator that creates PHP Data Transfer Object by array schema.",
   "license": "MIT",
   "authors": [
     {
@@ -9,17 +9,18 @@
       "homepage": "https://github.com/RyanDaDeng"
     }
   ],
-  "homepage": "https://github.com/timehunter/laraveljsontoclassgenerator",
+  "homepage": "https://github.com/timehunter/laravel-dto-generator",
   "keywords": [
     "Laravel",
-    "LaravelJsonToClassGenerator",
+    "LaravelDTOGenerator",
     "class generator",
     "model generator",
     "json generator",
     "json to model",
     "array to json",
     "array to model",
-    "json to class"
+    "json to class",
+    "dto generator
   ],
   "require": {
     "illuminate/support": "~5",
@@ -29,21 +30,21 @@
   },
   "autoload": {
     "psr-4": {
-      "TimeHunter\\LaravelJsonToClassGenerator\\": "src/"
+      "TimeHunter\\LaravelDTOGenerator\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "TimeHunter\\LaravelJsonToClassGenerator\\Tests\\": "tests"
+      "TimeHunter\\LaravelDTOGenerator\\Tests\\": "tests"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "TimeHunter\\LaravelJsonToClassGenerator\\LaravelJsonToClassGeneratorServiceProvider"
+        "TimeHunter\\LaravelDTOGenerator\\LaravelDTOGeneratorServiceProvider"
       ],
       "aliases": {
-        "LaravelJsonToClassGenerator": "TimeHunter\\LaravelJsonToClassGenerator\\Facades\\LaravelJsonToClassGenerator"
+        "LaravelDTOGenerator": "TimeHunter\\LaravelDTOGenerator\\Facades\\LaravelDTOGenerator"
       }
     }
   }
