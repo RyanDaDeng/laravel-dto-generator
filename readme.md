@@ -1,4 +1,4 @@
-# Laravel JSON/ARRAY to Class Generator
+# Laravel DTO Generator
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
