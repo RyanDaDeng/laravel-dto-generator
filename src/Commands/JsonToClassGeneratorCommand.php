@@ -1,11 +1,10 @@
 <?php
 
-namespace TimeHunter\LaravelJsonToClassGenerator\Commands;
+namespace TimeHunter\LaravelDTOGenerator\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
-use TimeHunter\LaravelJsonToClassGenerator\JsonGeneratorFactory;
-use TimeHunter\LaravelJsonToClassGenerator\Services\JsonToClassGenerator;
+use TimeHunter\LaravelDTOGenerator\DTOGeneratorFactory;
 
 class JsonToClassGeneratorCommand extends Command
 {
@@ -14,14 +13,14 @@ class JsonToClassGeneratorCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:jsontoclass';
+    protected $signature = 'make:dto';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate classes based on JSON';
+    protected $description = 'Generate DTO based on Array schema';
 
     /**
      * Create a new command instance.
@@ -41,7 +40,7 @@ class JsonToClassGeneratorCommand extends Command
     public function handle()
     {
         try {
-            JsonGeneratorFactory::generate(config('jsontoclassgenerator.driver'));
+            DTOGeneratorFactory::generate(config('dto-generator.driver'));
             $this->info('Classes generated. Please check them.');
         } catch (\Exception $e) {
             Log::error($e);

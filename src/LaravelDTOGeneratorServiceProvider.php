@@ -1,12 +1,12 @@
 <?php
 
-namespace TimeHunter\LaravelJsonToClassGenerator;
+namespace TimeHunter\LaravelDTOGenerator;
 
 
 use Illuminate\Support\ServiceProvider;
-use TimeHunter\LaravelJsonToClassGenerator\Commands\JsonToClassGeneratorCommand;
+use TimeHunter\LaravelDTOGenerator\Commands\JsonToClassGeneratorCommand;
 
-class LaravelJsonToClassGeneratorServiceProvider extends ServiceProvider
+class LaravelDTOGeneratorServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -41,8 +41,8 @@ class LaravelJsonToClassGeneratorServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/jsontoclassgenerator.php' => config_path('jsontoclassgenerator.php'),
-        ], 'jsontoclassgenerator.config');
+            __DIR__.'/../config/dto-generator.php' => config_path('dto-generator.php'),
+        ], 'dto-generator.config');
 
     }
 }

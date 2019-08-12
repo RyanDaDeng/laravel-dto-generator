@@ -1,6 +1,6 @@
 <?php
 
-namespace TimeHunter\LaravelJsonToClassGenerator\Services;
+namespace TimeHunter\LaravelDTOGenerator\Services;
 
 
 /**
@@ -15,6 +15,6 @@ class ArrayToClassGenerator extends AbstractClassGenerator
      */
     public function getData(): array
     {
-        return config('jsontoclassgenerator.array');
+        return config('dto-generator.array');
     }
 }

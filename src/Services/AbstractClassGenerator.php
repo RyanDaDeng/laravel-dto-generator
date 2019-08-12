@@ -1,6 +1,6 @@
 <?php
 
-namespace TimeHunter\LaravelJsonToClassGenerator\Services;
+namespace TimeHunter\LaravelDTOGenerator\Services;
 
 
 use Illuminate\Support\Facades\File;
@@ -24,7 +24,7 @@ abstract class AbstractClassGenerator
      */
     public function generate()
     {
-        $this->recursiveCreateFile($this->getData(), config('jsontoclassgenerator.namespace'));
+        $this->recursiveCreateFile($this->getData(), config('dto-generator.namespace'));
     }
 
     public function getType($value)
@@ -156,7 +156,7 @@ abstract class AbstractClassGenerator
 
             $file = $className . '.php';
 
-            $location = config('jsontoclassgenerator.file_location') . '/' . $file;
+            $location = config('dto-generator.file_location') . '/' . $file;
             File::put($location, $phpFile);
         }
     }
