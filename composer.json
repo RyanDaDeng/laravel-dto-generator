@@ -20,7 +20,9 @@
     "array to json",
     "array to model",
     "json to class",
-    "dto generator"
+    "dto generator",
+    "php dto geneeator",
+    "dto"
   ],
   "require": {
     "illuminate/support": "~5",
