@@ -45,7 +45,7 @@ php artisan make:dto
 #### PHP Array Schema
 
 ````php
-    'post'     => (object)[
+        'post'     => (object)[
             'author'    => (object)[
                 'id'         => 1,
                 'note'       => null,
@@ -72,7 +72,7 @@ php artisan make:dto
             'text'      => '',
             'date'      => '2019-01-01'
         ],
-  'feedback' => (object)[
+        'feedback' => (object)[
             'comment' => ''
         ]
 ````
