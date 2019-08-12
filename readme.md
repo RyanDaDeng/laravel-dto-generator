@@ -45,27 +45,35 @@ php artisan make:dto
 #### PHP Array Schema
 
 ````php
-     'post' => [
+    'post'     => (object)[
             'author'    => (object)[
+                'id'         => 1,
+                'note'       => null,
+                'rating'     => 4.6,
                 'first_name' => '',
                 'last_name'  => '',
             ],
             'comment'   => (object)[
-                'user'    => (object)[
+                'comment_by' => (object)[
+                    'is_active'  => false,
                     'first_name' => '',
                     'last_name'  => ''
                 ],
-                'content' => ''
+                'content'    => ''
             ],
-            'followers' => (array)[
-                'id'            => '',
-                'follower_user' => (object)[
+            'followers' => (object)[
+                'id'             => 1,
+                'follower_users' => (array)[
                     'first_name' => '',
                     'last_name'  => ''
                 ]
             ],
+            'views'     => 123,
             'text'      => '',
             'date'      => '2019-01-01'
+        ],
+  'feedback' => (object)[
+            'comment' => ''
         ]
 ````
 
