@@ -9,7 +9,7 @@
 [ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laravel-dto-generator.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/timehunter/laravel-dto-generator
 
-## A DTO generator that helps you create a bunch of models instead of repeated copy/paste.
+## A DTO generator that helps you create a bunch of models instead of repeating copy/paste.
 
 *Please update your version to be "~v2.0" and re-publish your config file*
 
