@@ -9,7 +9,7 @@ return [
     'driver'        => 'array',
     'array'         => [
         # Please define an object instead of item
-        # so each array needs to be defined with a key name, for example, 'message' is a key name
+        # so each array needs to be defined with a key name, for example, 'post' is a key name
         'post' => [
             'author'   => (object)[
                 'id'         => 1,
