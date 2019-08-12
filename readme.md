@@ -9,6 +9,8 @@
 [ico-downloads]: https://img.shields.io/packagist/dt/timehunter/laravel-json-to-class-generator.svg?style=flat-square
 [link-downloads]: https://packagist.org/packages/timehunter/laravel-json-to-class-generator
 
+*Please update your version to be "~v2.0" and re-publish your config file*
+
 Star me if you like it. ^.^ You can use this tool with 3rd party IDE to create nice classes.
 
 Install the package in development dependencies:
