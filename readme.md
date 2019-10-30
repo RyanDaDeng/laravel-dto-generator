@@ -20,7 +20,7 @@ Install the package in development dependencies:
 Via Composer
 
 ``` bash
-composer require --dev timehunter/laravel-dto-generator "~2.1"
+composer require --dev timehunter/laravel-dto-generator "~2.2.1"
 ```
 
 ## Installation
